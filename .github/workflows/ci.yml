@@ -28,9 +28,7 @@ jobs:
 
       # SCA: OWASP Dependency-Check
       - name: SCA — OWASP Dependency-Check
-        run: mvn -B org.owasp:dependency-check-maven:check
-        env:
-          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+        run: mvn -B org.owasp:dependency-check-maven:check -DnvdApiKey=${{ secrets.NVD_API_KEY }}
 
       - name: Upload SAST/SCA reports
         if: always()
