@@ -116,6 +116,7 @@
                 <configuration>
                     <failBuildOnCVSS>8</failBuildOnCVSS>
                     <format>HTML</format>
+                    <nvdApiKey>${env.NVD_API_KEY}</nvdApiKey>
                 </configuration>
             </plugin>
         </plugins>
