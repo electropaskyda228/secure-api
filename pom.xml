@@ -116,6 +116,8 @@
                 <configuration>
                     <failBuildOnCVSS>8</failBuildOnCVSS>
                     <format>HTML</format>
+                    <!-- Указываем плагину читать ключ из этой переменной -->
+                    <nvdApiKeyEnvironmentVariable>NVD_API_KEY</nvdApiKeyEnvironmentVariable>
                 </configuration>
             </plugin>
         </plugins>
