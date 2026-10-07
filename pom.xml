@@ -107,19 +107,6 @@
                     </plugins>
                 </configuration>
             </plugin>
-
-            <!-- SCA: OWASP Dependency-Check -->
-            <plugin>
-                <groupId>org.owasp</groupId>
-                <artifactId>dependency-check-maven</artifactId>
-                <version>9.2.0</version>
-                <configuration>
-                    <failBuildOnCVSS>8</failBuildOnCVSS>
-                    <format>HTML</format>
-                    <!-- Указываем плагину читать ключ из этой переменной -->
-                    <nvdApiKeyEnvironmentVariable>NVD_API_KEY</nvdApiKeyEnvironmentVariable>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 </project>

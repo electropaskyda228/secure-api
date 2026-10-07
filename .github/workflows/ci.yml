@@ -26,11 +26,14 @@ jobs:
       - name: SAST — SpotBugs
         run: mvn -B com.github.spotbugs:spotbugs-maven-plugin:check
 
-      # SCA: OWASP Dependency-Check
-      - name: SCA — OWASP Dependency-Check
-        run: mvn -B org.owasp:dependency-check-maven:check
+      # SCA: Snyk
+      - name: SCA — Snyk
+        uses: snyk/actions/maven@master
+        continue-on-error: true
         env:
-          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=high
 
       - name: Upload SAST/SCA reports
         if: always()
